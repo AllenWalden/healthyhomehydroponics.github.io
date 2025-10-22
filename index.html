@@ -4,58 +4,716 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Home Hydroponics - Grow Fresh Food Year-Round</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset and Base Styles */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+        
+        :root {
+            --primary: #2d5a27;
+            --secondary: #8bc34a;
+            --accent: #689f38;
+            --light: #f8fdf6;
+            --dark: #1a3317;
+            --text: #333333;
+            --gray: #f5f5f5;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: white;
+            overflow-x: hidden;
+        }
+        
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 15px;
         }
-        header {
-            background: #2d5a27;
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
             color: white;
+            padding: 0.9rem 1.8rem;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 1rem 0;
         }
-        .hero {
-            background: #4a7c3a;
-            color: white;
-            padding: 4rem 0;
-            text-align: center;
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
         }
-        .btn {
-            background: #8bc34a;
-            color: white;
-            padding: 10px 20px;
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--dark);
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.8)), url('https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 12rem 1rem 8rem;
+            margin-top: 70px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Products Section */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .product-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.8rem;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+        
+        .product-info p {
+            margin-bottom: 1.2rem;
+            color: #666;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background-color: var(--light);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .benefit-item {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-item h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
             border-radius: 4px;
-            display: inline-block;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 0.75rem;
+            }
+            
+            .hero {
+                padding: 10rem 1rem 6rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
-            <h1>Healthy Home Hydroponics</h1>
+            <div class="header-content">
+                <div class="logo">Healthy Home <span>Hydroponics</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
-    
-    <section class="hero">
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
         <div class="container">
-            <h2>Grow Fresh, Healthy Food Year-Round</h2>
-            <p>Discover the joy of hydroponic gardening with our premium systems</p>
+            <h1>Grow Fresh, Healthy Food Year-Round</h1>
+            <p>Discover the joy of hydroponic gardening with our premium systems and supplies for your home.</p>
             <a href="#products" class="btn">Shop Now</a>
         </div>
     </section>
-    
-    <section class="container">
-        <h2>Welcome to Healthy Home Hydroponics</h2>
-        <p>Your site is working! Now you can gradually add back your content.</p>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Healthy Home Hydroponics</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At Healthy Home Hydroponics, we believe everyone should have access to fresh, nutritious food regardless of space or season. Our mission is to make hydroponic gardening accessible and enjoyable for home growers.</p>
+                    <p>We offer a wide range of hydroponic systems, nutrients, and growing supplies to help you cultivate your own vegetables, herbs, and fruits right in your home.</p>
+                    <p>Whether you're a beginner or an experienced gardener, we have the products and expertise to help you succeed in your hydroponic journey.</p>
+                    <a href="#contact" class="btn" style="margin-top: 1rem;">Get Started</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1585776245865-b75dfb9f7e79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern hydroponic system">
+                </div>
+            </div>
+        </div>
     </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Bestseller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Starter Hydroponic Kit">
+                    </div>
+                    <div class="product-info">
+                        <h3>Starter Hydroponic Kit</h3>
+                        <p>Perfect for beginners, this all-in-one kit includes everything you need to get started with hydroponic gardening.</p>
+                        <div class="product-price">$149.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">Essential</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nutrient Solution">
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Nutrient Solution</h3>
+                        <p>Complete blend of essential nutrients for healthy plant development and high yields in hydroponic systems.</p>
+                        <div class="product-price">$24.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1557166983-c2d6c81c5df7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="LED Grow Light">
+                    </div>
+                    <div class="product-info">
+                        <h3>LED Grow Light</h3>
+                        <p>Energy-efficient full spectrum lighting solution for optimal plant growth in any indoor environment.</p>
+                        <div class="product-price">$89.99</div>
+                        <a href="#" class="btn">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="benefits">
+        <div class="container">
+            <h2 class="section-title">Why Choose Hydroponics?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌱</div>
+                    <h3>Faster Growth</h3>
+                    <p>Plants grow up to 50% faster in hydroponic systems compared to soil.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💧</div>
+                    <h3>Water Efficient</h3>
+                    <p>Uses up to 90% less water than traditional gardening methods.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🏙️</div>
+                    <h3>Space Saving</h3>
+                    <p>Grow more food in less space, perfect for urban environments.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌞</div>
+                    <h3>Year-Round Growing</h3>
+                    <p>Not limited by seasons - grow fresh produce all year long.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Have questions about our products or need help with your setup? We're here to help! Fill out the form and we'll get back to you as soon as possible.</p>
+                    <p><strong>Hours:</strong> Monday-Friday 9am-6pm EST</p>
+                    <p>We typically respond within 24 hours during business days.</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject">
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Healthy Home Hydroponics</h3>
+                    <p>Your trusted source for home hydroponic systems and supplies. Grow fresh, healthy food year-round.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#benefits">Benefits</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <p>Follow us on social media for tips and updates:</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Healthy Home Hydroponics. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send this data to a server
+            // For now, we'll just show a success message
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+            
+            // For actual email functionality, you would need:
+            // 1. A backend service (like Formspree, Netlify Forms, or a custom server)
+            // 2. To replace this with code that sends the form data to that service
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
