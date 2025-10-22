@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Home Hydroponics - Grow Fresh Food Year-Round</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Snipcart CSS -->
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
     <style>
         /* Reset and Base Styles */
@@ -269,7 +268,7 @@
             margin-bottom: 1.2rem;
         }
         
-        .snipcart-add-item {
+        .view-details-btn {
             width: 100%;
             background: var(--secondary);
             color: white;
@@ -279,9 +278,162 @@
             font-weight: 600;
             cursor: pointer;
             transition: background 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .snipcart-add-item:hover {
+        .view-details-btn:hover {
+            background: var(--accent);
+        }
+        
+        /* Product Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 900px;
+            border-radius: 15px;
+            position: relative;
+            animation: modalOpen 0.3s ease;
+        }
+        
+        @keyframes modalOpen {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text);
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .modal-product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 2rem;
+        }
+        
+        .modal-product-image {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .modal-product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .modal-product-info h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .modal-product-price {
+            font-size: 2rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .modal-product-description {
+            margin: 2rem 0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .specs-list {
+            margin: 2rem 0;
+        }
+        
+        .specs-list h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .specs-list ul {
+            list-style: none;
+        }
+        
+        .specs-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .specs-list li:before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .modal-add-to-cart {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            text-align: center;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            gap: 1rem;
+        }
+        
+        .quantity-selector label {
+            font-weight: 600;
+        }
+        
+        .quantity-selector input {
+            width: 80px;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .modal-snipcart-add-item {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 1.1rem;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .modal-snipcart-add-item:hover {
             background: var(--accent);
         }
         
@@ -486,6 +638,17 @@
             section {
                 padding: 3rem 0;
             }
+            
+            .modal-product-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1.5rem;
+            }
+            
+            .modal-content {
+                margin: 1rem auto;
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -535,17 +698,9 @@
                     </div>
                     <div class="product-info">
                         <h3>Complete Hydroponic Starter Kit</h3>
-                        <p>Everything you need to start growing fresh herbs and vegetables indoors. Includes LED lights, pump, and nutrients.</p>
+                        <p>Everything you need to start growing fresh herbs and vegetables indoors.</p>
                         <div class="product-price">$169.99</div>
-                        <button class="snipcart-add-item"
-                            data-item-id="starter-kit-001"
-                            data-item-name="Complete Hydroponic Starter Kit"
-                            data-item-price="169.99"
-                            data-item-url="https://healthyhomehydroponics.com"
-                            data-item-image="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                            data-item-description="Complete hydroponic starter kit with LED lights and automatic watering system">
-                            <a href="product-starter-kit.html" class="btn" style="display: block; text-align: center; text-decoration: none;">View Details</a>
-                        </button>
+                        <button class="view-details-btn" onclick="openModal('starter-kit')">View Details</button>
                     </div>
                 </div>
                 
@@ -557,17 +712,9 @@
                     </div>
                     <div class="product-info">
                         <h3>Premium Nutrient Solution Pack</h3>
-                        <p>Complete 3-part nutrient system for optimal plant growth. Suitable for all hydroponic systems.</p>
+                        <p>Complete 3-part nutrient system for optimal plant growth.</p>
                         <div class="product-price">$34.99</div>
-                        <button class="snipcart-add-item"
-                            data-item-id="nutrients-002"
-                            data-item-name="Premium Nutrient Solution Pack"
-                            data-item-price="34.99"
-                            data-item-url="https://healthyhomehydroponics.com"
-                            data-item-image="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                            data-item-description="3-part nutrient solution for hydroponic systems">
-                            <a href="product-starter-kit.html" class="btn" style="display: block; text-align: center; text-decoration: none;">View Details</a>
-                        </button>
+                        <button class="view-details-btn" onclick="openModal('nutrients')">View Details</button>
                     </div>
                 </div>
                 
@@ -579,22 +726,197 @@
                     </div>
                     <div class="product-info">
                         <h3>Advanced LED Grow Light</h3>
-                        <p>Full spectrum LED lighting for maximum plant growth. Energy efficient with automatic timer.</p>
+                        <p>Full spectrum LED lighting for maximum plant growth.</p>
                         <div class="product-price">$89.99</div>
-                        <button class="snipcart-add-item"
-                            data-item-id="grow-light-003"
-                            data-item-name="Advanced LED Grow Light"
-                            data-item-price="89.99"
-                            data-item-url="https://healthyhomehydroponics.com"
-                            data-item-image="https://images.unsplash.com/photo-1557166983-c2d6c81c5df7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-                            data-item-description="Full spectrum LED grow light with automatic timer">
-                            <a href="product-starter-kit.html" class="btn" style="display: block; text-align: center; text-decoration: none;">View Details</a>
-                        </button>
+                        <button class="view-details-btn" onclick="openModal('grow-light')">View Details</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Product Detail Modals -->
+    
+    <!-- Starter Kit Modal -->
+    <div id="modal-starter-kit" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('starter-kit')">&times;</button>
+            <div class="modal-product-layout">
+                <div class="modal-product-image">
+                    <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Complete Hydroponic Starter Kit">
+                </div>
+                <div class="modal-product-info">
+                    <h2>Complete Hydroponic Starter Kit</h2>
+                    <div class="modal-product-price">$169.99</div>
+                    
+                    <div class="modal-product-description">
+                        <p>Start your hydroponic gardening journey with our complete all-in-one starter kit. Perfect for beginners, this system includes everything you need to grow fresh herbs, leafy greens, and vegetables right in your home.</p>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>What's Included:</h3>
+                        <ul>
+                            <li>12-pod hydroponic growing system</li>
+                            <li>Full spectrum LED grow lights</li>
+                            <li>Automatic water circulation pump</li>
+                            <li>Digital control panel with timer</li>
+                            <li>Nutrient solution (1-month supply)</li>
+                            <li>Grow sponges and seed pods</li>
+                            <li>pH testing kit</li>
+                            <li>Detailed instruction manual</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>Features:</h3>
+                        <ul>
+                            <li>Grows plants 30-50% faster than soil</li>
+                            <li>Uses 90% less water than traditional gardening</li>
+                            <li>Energy-efficient LED lighting</li>
+                            <li>Quiet operation - perfect for homes</li>
+                            <li>Compact design fits on countertops</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-add-to-cart">
+                        <div class="quantity-selector">
+                            <label for="quantity-starter">Quantity:</label>
+                            <input type="number" id="quantity-starter" value="1" min="1">
+                        </div>
+                        <button class="modal-snipcart-add-item"
+                            data-item-id="starter-kit-001"
+                            data-item-name="Complete Hydroponic Starter Kit"
+                            data-item-price="169.99"
+                            data-item-url="https://healthyhomehydroponics.com"
+                            data-item-image="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            data-item-description="Complete hydroponic starter kit with LED lights, pump, and nutrients"
+                            onclick="addToCart('starter-kit-001', 'Complete Hydroponic Starter Kit', 169.99, document.getElementById('quantity-starter').value)">
+                            Add to Cart - $169.99
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nutrients Modal -->
+    <div id="modal-nutrients" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('nutrients')">&times;</button>
+            <div class="modal-product-layout">
+                <div class="modal-product-image">
+                    <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Premium Nutrient Solution">
+                </div>
+                <div class="modal-product-info">
+                    <h2>Premium Nutrient Solution Pack</h2>
+                    <div class="modal-product-price">$34.99</div>
+                    
+                    <div class="modal-product-description">
+                        <p>Our premium 3-part nutrient solution is specially formulated for hydroponic systems. Provides all essential macro and micronutrients for optimal plant growth and high yields.</p>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>What's Included:</h3>
+                        <ul>
+                            <li>Grow formula (250ml) - for vegetative growth</li>
+                            <li>Bloom formula (250ml) - for flowering/fruiting</li>
+                            <li>Micro formula (250ml) - essential micronutrients</li>
+                            <li>Measuring cup and instructions</li>
+                            <li>pH balance guide</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>Benefits:</h3>
+                        <ul>
+                            <li>Promotes faster growth and higher yields</li>
+                            <li>Balanced pH for optimal nutrient uptake</li>
+                            <li>Suitable for all hydroponic systems</li>
+                            <li>Works with herbs, vegetables, and fruits</li>
+                            <li>Easy-to-follow mixing instructions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-add-to-cart">
+                        <div class="quantity-selector">
+                            <label for="quantity-nutrients">Quantity:</label>
+                            <input type="number" id="quantity-nutrients" value="1" min="1">
+                        </div>
+                        <button class="modal-snipcart-add-item"
+                            data-item-id="nutrients-002"
+                            data-item-name="Premium Nutrient Solution Pack"
+                            data-item-price="34.99"
+                            data-item-url="https://healthyhomehydroponics.com"
+                            data-item-image="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            data-item-description="3-part nutrient solution for hydroponic systems"
+                            onclick="addToCart('nutrients-002', 'Premium Nutrient Solution Pack', 34.99, document.getElementById('quantity-nutrients').value)">
+                            Add to Cart - $34.99
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grow Light Modal -->
+    <div id="modal-grow-light" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('grow-light')">&times;</button>
+            <div class="modal-product-layout">
+                <div class="modal-product-image">
+                    <img src="https://images.unsplash.com/photo-1557166983-c2d6c81c5df7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="LED Grow Light">
+                </div>
+                <div class="modal-product-info">
+                    <h2>Advanced LED Grow Light</h2>
+                    <div class="modal-product-price">$89.99</div>
+                    
+                    <div class="modal-product-description">
+                        <p>Maximize your plant growth with our full spectrum LED grow light. Designed specifically for indoor hydroponic systems, this energy-efficient light provides the perfect spectrum for all growth stages.</p>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>Specifications:</h3>
+                        <ul>
+                            <li>Full spectrum LED (400-700nm)</li>
+                            <li>120W power consumption</li>
+                            <li>Adjustable height from 12" to 48"</li>
+                            <li>Built-in digital timer (4/8/12/16 hour cycles)</li>
+                            <li>Daisy-chain capability for multiple lights</li>
+                            <li>Quiet cooling fan system</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>Features:</h3>
+                        <ul>
+                            <li>Promotes photosynthesis for all growth stages</li>
+                            <li>Energy efficient - uses 50% less power than traditional lights</li>
+                            <li>Low heat output - safe for indoor use</li>
+                            <li>Easy to install and adjust</li>
+                            <li>2-year manufacturer warranty</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="modal-add-to-cart">
+                        <div class="quantity-selector">
+                            <label for="quantity-light">Quantity:</label>
+                            <input type="number" id="quantity-light" value="1" min="1">
+                        </div>
+                        <button class="modal-snipcart-add-item"
+                            data-item-id="grow-light-003"
+                            data-item-name="Advanced LED Grow Light"
+                            data-item-price="89.99"
+                            data-item-url="https://healthyhomehydroponics.com"
+                            data-item-image="https://images.unsplash.com/photo-1557166983-c2d6c81c5df7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            data-item-description="Full spectrum LED grow light with automatic timer"
+                            onclick="addToCart('grow-light-003', 'Advanced LED Grow Light', 89.99, document.getElementById('quantity-light').value)">
+                            Add to Cart - $89.99
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Benefits Section -->
     <section class="benefits" id="benefits">
@@ -638,7 +960,7 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
-                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                    <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -703,32 +1025,21 @@
 
     <!-- Snipcart Script -->
     <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
-    <div hidden id="snipcart" data-api-key="YTQ4M2YyYzktMWI2MS00ZTZmLWJiZDgtOTkxYmYyMzFjY2M0NjM4OTY3NTU1NTg1NzUyMDYz" data-config-modal-style="side"></div>
+    <div hidden id="snipcart" data-api-key="YOUR_API_KEY_HERE" data-config-modal-style="side"></div>
 
-    <!-- Form Handling -->
     <script>
-        // Simple form submission handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
+        // Modal Functions
+        function openModal(productId) {
+            document.getElementById('modal-' + productId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
         
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
-
-
+        function closeModal(productId) {
+            document.getElementById('modal-' + productId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display
