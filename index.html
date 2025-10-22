@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Home Hydroponics - Grow Fresh Food Year-Round</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Snipcart CSS -->
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
     <style>
         /* Reset and Base Styles */
         * {
@@ -110,6 +112,7 @@
         nav ul {
             display: flex;
             list-style: none;
+            align-items: center;
         }
         
         nav ul li {
@@ -143,6 +146,33 @@
             width: 100%;
         }
         
+        .cart-icon {
+            position: relative;
+        }
+        
+        .snipcart-checkout {
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--dark);
+        }
+        
+        .snipcart-items-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.8)), url('https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
@@ -165,47 +195,6 @@
             max-width: 700px;
             margin: 0 auto 2.5rem;
             opacity: 0.9;
-        }
-        
-        /* About Section */
-        .about {
-            background-color: var(--light);
-        }
-        
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 3rem;
-        }
-        
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s;
-        }
-        
-        .about-image:hover img {
-            transform: scale(1.03);
         }
         
         /* Products Section */
@@ -278,6 +267,22 @@
             color: var(--secondary);
             font-size: 1.5rem;
             margin-bottom: 1.2rem;
+        }
+        
+        .snipcart-add-item {
+            width: 100%;
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .snipcart-add-item:hover {
+            background: var(--accent);
         }
         
         /* Benefits Section */
@@ -493,10 +498,15 @@
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#benefits">Benefits</a></li>
                         <li><a href="#contact">Contact</a></li>
+                        <li class="cart-icon">
+                            <button class="snipcart-checkout">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="snipcart-items-count">0</span>
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -512,68 +522,74 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Healthy Home Hydroponics</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>At Healthy Home Hydroponics, we believe everyone should have access to fresh, nutritious food regardless of space or season. Our mission is to make hydroponic gardening accessible and enjoyable for home growers.</p>
-                    <p>We offer a wide range of hydroponic systems, nutrients, and growing supplies to help you cultivate your own vegetables, herbs, and fruits right in your home.</p>
-                    <p>Whether you're a beginner or an experienced gardener, we have the products and expertise to help you succeed in your hydroponic journey.</p>
-                    <a href="#contact" class="btn" style="margin-top: 1rem;">Get Started</a>
-                </div>
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1585776245865-b75dfb9f7e79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Modern hydroponic system">
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Products Section -->
     <section id="products">
         <div class="container">
             <h2 class="section-title">Our Products</h2>
             <div class="products-grid">
-                <!-- Product 1 -->
+                <!-- Product 1 - Starter Kit -->
                 <div class="product-card">
                     <div class="product-badge">Bestseller</div>
                     <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Starter Hydroponic Kit">
+                        <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Hydroponic Starter Kit">
                     </div>
                     <div class="product-info">
-                        <h3>Starter Hydroponic Kit</h3>
-                        <p>Perfect for beginners, this all-in-one kit includes everything you need to get started with hydroponic gardening.</p>
-                        <div class="product-price">$149.99</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <h3>Complete Hydroponic Starter Kit</h3>
+                        <p>Everything you need to start growing fresh herbs and vegetables indoors. Includes LED lights, pump, and nutrients.</p>
+                        <div class="product-price">$169.99</div>
+                        <button class="snipcart-add-item"
+                            data-item-id="starter-kit-001"
+                            data-item-name="Complete Hydroponic Starter Kit"
+                            data-item-price="169.99"
+                            data-item-url="https://healthyhomehydroponics.com"
+                            data-item-image="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            data-item-description="Complete hydroponic starter kit with LED lights and automatic watering system">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
                 
-                <!-- Product 2 -->
+                <!-- Product 2 - Nutrient Solution -->
                 <div class="product-card">
                     <div class="product-badge">Essential</div>
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nutrient Solution">
                     </div>
                     <div class="product-info">
-                        <h3>Premium Nutrient Solution</h3>
-                        <p>Complete blend of essential nutrients for healthy plant development and high yields in hydroponic systems.</p>
-                        <div class="product-price">$24.99</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <h3>Premium Nutrient Solution Pack</h3>
+                        <p>Complete 3-part nutrient system for optimal plant growth. Suitable for all hydroponic systems.</p>
+                        <div class="product-price">$34.99</div>
+                        <button class="snipcart-add-item"
+                            data-item-id="nutrients-002"
+                            data-item-name="Premium Nutrient Solution Pack"
+                            data-item-price="34.99"
+                            data-item-url="https://healthyhomehydroponics.com"
+                            data-item-image="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            data-item-description="3-part nutrient solution for hydroponic systems">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
                 
-                <!-- Product 3 -->
+                <!-- Product 3 - Grow Light -->
                 <div class="product-card">
                     <div class="product-badge">New</div>
                     <div class="product-image">
                         <img src="https://images.unsplash.com/photo-1557166983-c2d6c81c5df7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="LED Grow Light">
                     </div>
                     <div class="product-info">
-                        <h3>LED Grow Light</h3>
-                        <p>Energy-efficient full spectrum lighting solution for optimal plant growth in any indoor environment.</p>
+                        <h3>Advanced LED Grow Light</h3>
+                        <p>Full spectrum LED lighting for maximum plant growth. Energy efficient with automatic timer.</p>
                         <div class="product-price">$89.99</div>
-                        <a href="#" class="btn">Add to Cart</a>
+                        <button class="snipcart-add-item"
+                            data-item-id="grow-light-003"
+                            data-item-name="Advanced LED Grow Light"
+                            data-item-price="89.99"
+                            data-item-url="https://healthyhomehydroponics.com"
+                            data-item-image="https://images.unsplash.com/photo-1557166983-c2d6c81c5df7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            data-item-description="Full spectrum LED grow light with automatic timer">
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
             </div>
@@ -622,7 +638,7 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send Us a Message</h3>
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" required>
@@ -663,7 +679,6 @@
                     <h3>Quick Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#benefits">Benefits</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -686,19 +701,17 @@
         </div>
     </footer>
 
+    <!-- Snipcart Script -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+    <div hidden id="snipcart" data-api-key="YOUR_PUBLIC_API_KEY" data-config-modal-style="side"></div>
+
+    <!-- Form Handling -->
     <script>
         // Simple form submission handler
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // In a real implementation, you would send this data to a server
-            // For now, we'll just show a success message
             alert('Thank you for your message! We will get back to you soon.');
             this.reset();
-            
-            // For actual email functionality, you would need:
-            // 1. A backend service (like Formspree, Netlify Forms, or a custom server)
-            // 2. To replace this with code that sends the form data to that service
         });
         
         // Smooth scrolling for navigation links
