@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Hydroponic Starter Kit - Healthy Home Hydroponics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+    <style>
+        /* COPY ALL YOUR CSS FROM INDEX.HTML HERE */
+        /* Add these additional product page styles: */
+        
+        .product-detail {
+            padding: 100px 0 50px;
+        }
+        
+        .product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .product-gallery {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .main-image {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .thumbnails {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .thumbnail.active {
+            border-color: var(--secondary);
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .product-info h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .product-price {
+            font-size: 2rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+        
+        .product-description {
+            margin: 2rem 0;
+            line-height: 1.8;
+        }
+        
+        .specs-list {
+            margin: 2rem 0;
+        }
+        
+        .specs-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .specs-list li:before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+        }
+        
+        .add-to-cart-section {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+        
+        .quantity-selector label {
+            margin-right: 1rem;
+        }
+        
+        .quantity-selector input {
+            width: 80px;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .product-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-gallery {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- COPY YOUR HEADER FROM INDEX.HTML -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Healthy Home <span>Hydroponics</span></div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#benefits">Benefits</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li class="cart-icon">
+                            <button class="snipcart-checkout">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="snipcart-items-count">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- PRODUCT DETAIL SECTION -->
+    <section class="product-detail">
+        <div class="container">
+            <div class="product-layout">
+                <!-- Product Images -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Complete Hydroponic Starter Kit" id="mainImage">
+                    </div>
+                    <div class="thumbnails">
+                        <div class="thumbnail active" onclick="changeImage('https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                            <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Main view">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('https://images.unsplash.com/photo-1585776245865-b75dfb9f7e79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                            <img src="https://images.unsplash.com/photo-1585776245865-b75dfb9f7e79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Side view">
+                        </div>
+                        <div class="thumbnail" onclick="changeImage('https://images.unsplash.com/photo-1597848212624-e6d4bd7d502d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+                            <img src="https://images.unsplash.com/photo-1597848212624-e6d4bd7d502d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="In use">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info">
+                    <h1>Complete Hydroponic Starter Kit</h1>
+                    <div class="product-price">$169.99</div>
+                    
+                    <div class="product-description">
+                        <p>Start your hydroponic gardening journey with our complete all-in-one starter kit. Perfect for beginners, this system includes everything you need to grow fresh herbs, leafy greens, and vegetables right in your home.</p>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>What's Included:</h3>
+                        <ul>
+                            <li>12-pod hydroponic growing system</li>
+                            <li>Full spectrum LED grow lights</li>
+                            <li>Automatic water circulation pump</li>
+                            <li>Digital control panel with timer</li>
+                            <li>Nutrient solution (1-month supply)</li>
+                            <li>Grow sponges and seed pods</li>
+                            <li>pH testing kit</li>
+                            <li>Detailed instruction manual</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="specs-list">
+                        <h3>Features:</h3>
+                        <ul>
+                            <li>Grows plants 30-50% faster than soil</li>
+                            <li>Uses 90% less water than traditional gardening</li>
+                            <li>Energy-efficient LED lighting</li>
+                            <li>Quiet operation - perfect for homes</li>
+                            <li>Compact design fits on countertops</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="add-to-cart-section">
+                        <h3>Add to Cart</h3>
+                        <div class="quantity-selector">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" name="quantity" value="1" min="1">
+                        </div>
+                        <button class="snipcart-add-item btn"
+                            data-item-id="starter-kit-001"
+                            data-item-name="Complete Hydroponic Starter Kit"
+                            data-item-price="169.99"
+                            data-item-url="https://healthyhomehydroponics.com/product-starter-kit.html"
+                            data-item-image="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                            data-item-description="Complete hydroponic starter kit with LED lights, pump, and nutrients"
+                            data-item-custom1-name="Quantity"
+                            data-item-custom1-value="1">
+                            Add to Cart - $169.99
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COPY YOUR FOOTER FROM INDEX.HTML -->
+    <footer>
+        <!-- Your footer code here -->
+    </footer>
+
+    <!-- Snipcart Script -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+    <div hidden id="snipcart" data-api-key="YOUR_API_KEY_HERE" data-config-modal-style="side"></div>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            event.target.closest('.thumbnail').classList.add('active');
+        }
+        
+        // Update quantity in Snipcart
+        document.getElementById('quantity').addEventListener('change', function() {
+            const addButton = document.querySelector('.snipcart-add-item');
+            addButton.setAttribute('data-item-custom1-value', this.value);
+        });
+    </script>
+</body>
+</html>
