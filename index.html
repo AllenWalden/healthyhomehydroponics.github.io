@@ -1043,3 +1043,52 @@
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        // Add to Cart Function
+        function addToCart(itemId, itemName, itemPrice, quantity) {
+            // Using Snipcart API to add item to cart
+            Snipcart.api.cart.items.add({
+                id: itemId,
+                name: itemName,
+                price: itemPrice,
+                quantity: parseInt(quantity),
+                url: window.location.href
+            });
+            
+            // Close the modal after adding to cart
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+            
+            // Show success message
+            alert('Item added to cart!');
+        }
+        
+        // Form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
