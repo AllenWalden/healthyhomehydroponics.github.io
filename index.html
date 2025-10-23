@@ -856,10 +856,10 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li class="cart-icon">
-                            <button class="snipcart-checkout">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span class="snipcart-items-count">0</span>
-                            </button>
+                           <button class="snipcart-checkout" style="background: none; border: none; color: var(--dark); font-size: 1.3rem; cursor: pointer; padding: 5px;">
+    <i class="fas fa-shopping-cart"></i>
+    <span class="snipcart-items-count">0</span>
+</button>
                         </li>
                     </ul>
                 </nav>
@@ -1098,22 +1098,31 @@
                             <li>Microgreens and sprouts</li>
                         </ul>
                     </div>
-
-                    <div class="quantity-selector">
-                        <label for="quantity-garden">Quantity:</label>
-                        <input type="number" id="quantity-garden" value="1" min="1">
-                    </div>
-                    
-                    <div class="modal-actions">
-                        <button class="modal-btn modal-btn-cart" onclick="addToCart('smart-garden-001', '12-Pod Smart Garden System', 80.00, document.getElementById('quantity-garden').value)">
-                            <i class="fas fa-cart-plus"></i>
-                            Add to Cart
-                        </button>
-                        <button class="modal-btn modal-btn-buy" onclick="buyNow('smart-garden-001', '12-Pod Smart Garden System', 80.00, document.getElementById('quantity-garden').value)">
-                            <i class="fas fa-bolt"></i>
-                            Buy Now
-                        </button>
-                    </div>
+<div class="modal-add-to-cart">
+    <div class="quantity-selector">
+        <label for="quantity-garden">Quantity:</label>
+        <input type="number" id="quantity-garden" value="1" min="1">
+    </div>
+    
+    <!-- Add to Cart Button -->
+    <button class="snipcart-add-item modal-snipcart-add-item"
+        data-item-id="smart-garden-001"
+        data-item-name="12-Pod Smart Garden System" 
+        data-item-price="80.00"
+        data-item-url="/"
+        data-item-image="https://ae-pic-a1.aliexpress-media.com/kf/S2841c6092be84cd88ab07e66dd2cce61g.jpg_220x220q75.jpg_.avif"
+        data-item-quantity="1"
+        style="width: 100%; margin-bottom: 10px;">
+        Add to Cart - $80.00
+    </button>
+    
+    <!-- Buy Now Button -->
+    <button class="buy-now-btn" 
+        onclick="buyNowDirect('smart-garden-001', '12-Pod Smart Garden System', 80.00, document.getElementById('quantity-garden').value)"
+        style="background: var(--primary); color: white; border: none; padding: 1rem; border-radius: 4px; font-weight: 600; cursor: pointer; width: 100%;">
+        Buy Now - $80.00
+    </button>
+</div>
                 </div>
             </div>
         </div>
@@ -1317,4 +1326,5 @@ function buyNow(itemId, itemName, itemPrice, quantity) {
     </script>
 </body>
 </html>
+
 
