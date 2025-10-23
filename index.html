@@ -1182,21 +1182,31 @@
                         </ul>
                     </div>
 
-                    <div class="quantity-selector">
-                        <label for="quantity-herb">Quantity:</label>
-                        <input type="number" id="quantity-herb" value="1" min="1">
-                    </div>
-                    
-                    <div class="modal-actions">
-                        <button class="modal-btn modal-btn-cart" onclick="addToCart('herb-garden-002', '6-Pod Indoor Herb Garden', 65.00, document.getElementById('quantity-herb').value)">
-                            <i class="fas fa-cart-plus"></i>
-                            Add to Cart
-                        </button>
-                        <button class="modal-btn modal-btn-buy" onclick="buyNow('herb-garden-002', '6-Pod Indoor Herb Garden', 65.00, document.getElementById('quantity-herb').value)">
-                            <i class="fas fa-bolt"></i>
-                            Buy Now
-                        </button>
-                    </div>
+                    <div class="modal-add-to-cart">
+    <div class="quantity-selector">
+        <label for="quantity-herb">Quantity:</label>
+        <input type="number" id="quantity-herb" value="1" min="1">
+    </div>
+    
+    <!-- Add to Cart Button -->
+    <button class="snipcart-add-item modal-snipcart-add-item"
+        data-item-id="herb-garden-002"
+        data-item-name="6-Pod Indoor Herb Garden"
+        data-item-price="65.00"
+        data-item-url="/"
+        data-item-image="https://ae-pic-a1.aliexpress-media.com/kf/S49b6a5f200544e28bf56ff234a6d4914Z.jpg_220x220q75.jpg_.avif" 
+        data-item-quantity="1"
+        style="width: 100%; margin-bottom: 10px;">
+        Add to Cart - $65.00
+    </button>
+    
+    <!-- Buy Now Button -->
+    <button class="buy-now-btn" 
+        onclick="buyNowDirect('herb-garden-002', '6-Pod Indoor Herb Garden', 65.00, document.getElementById('quantity-herb').value)"
+        style="background: var(--primary); color: white; border: none; padding: 1rem; border-radius: 4px; font-weight: 600; cursor: pointer; width: 100%;">
+        Buy Now - $65.00
+    </button>
+</div>
                 </div>
             </div>
         </div>
@@ -1239,22 +1249,31 @@
         }
         
         // Cart Functions
-        function addToCart(itemId, itemName, itemPrice, quantity) {
-    Snipcart.api.cart.items.add({
-        id: itemId,
-        name: itemName,
-        price: parseFloat(itemPrice),
-        quantity: parseInt(quantity) || 1,
-        url: window.location.href
-    }).then(function(item) {
-        // Close modal
+        // Buy Now Function - Goes directly to checkout
+function buyNowDirect(itemId, itemName, itemPrice, quantity) {
+    // First clear the cart
+    Snipcart.api.cart.items.clear().then(() => {
+        // Then add just this one item
+        return Snipcart.api.cart.items.add({
+            id: itemId,
+            name: itemName,
+            price: parseFloat(itemPrice),
+            quantity: parseInt(quantity) || 1,
+            url: window.location.href
+        });
+    }).then(() => {
+        // Close all modals
         const modals = document.querySelectorAll('.modal');
         modals.forEach(modal => {
             modal.style.display = 'none';
         });
         document.body.style.overflow = 'auto';
+        
+        // Open Snipcart checkout directly
+        Snipcart.api.modal.show();
     }).catch(function(error) {
-        console.error('Error adding to cart:', error);
+        console.error('Error in buy now:', error);
+        alert('There was an error processing your order. Please try again.');
     });
 }
 
@@ -1326,5 +1345,6 @@ function buyNow(itemId, itemName, itemPrice, quantity) {
     </script>
 </body>
 </html>
+
 
 
