@@ -33,6 +33,9 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://healthyhomehydroponics.com">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
     <style>
         /* Reset and Base Styles */
@@ -127,9 +130,17 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
             font-size: 1.6rem;
             font-weight: 700;
             color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo-image {
+            height: 40px;
+            margin-right: 10px;
         }
         
         .logo span {
@@ -181,8 +192,14 @@
             cursor: pointer;
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--dark);
+            padding: 5px;
+            transition: color 0.3s;
+        }
+        
+        .snipcart-checkout:hover {
+            color: var(--secondary);
         }
         
         .snipcart-items-count {
@@ -198,6 +215,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
         }
         
         /* Hero Section */
@@ -803,11 +821,9 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <!-- REPLACE THIS ENTIRE LOGO DIV -->
-            <div class="logo">
-                <img src="https://imgur.com/a/Wmwm1VD" alt="Healthy Home Hydroponics" class="logo-image">
-                <span class="logo-text">Healthy Home <span>Hydroponics</span></span>
-            </div>
+                <a href="#home" class="logo">
+                    <span class="logo-text">Healthy Home <span>Hydroponics</span></span>
+                </a>
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -1296,8 +1312,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
