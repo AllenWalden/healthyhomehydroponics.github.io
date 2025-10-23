@@ -1231,23 +1231,44 @@
         
         // Cart Functions
         function addToCart(itemId, itemName, itemPrice, quantity) {
-            Snipcart.api.cart.items.add({
-                id: itemId,
-                name: itemName,
-                price: parseFloat(itemPrice),
-                quantity: parseInt(quantity) || 1,
-                url: window.location.href
-            }).then(function(item) {
-                closeModal('smart-garden');
-                closeModal('herb-garden');
-                
-                // Optional: Show subtle notification
-                console.log('Added to cart:', item);
-            }).catch(function(error) {
-                console.error('Error adding to cart:', error);
-                alert('There was an error adding the item to your cart. Please try again.');
-            });
-        }
+    Snipcart.api.cart.items.add({
+        id: itemId,
+        name: itemName,
+        price: parseFloat(itemPrice),
+        quantity: parseInt(quantity) || 1,
+        url: window.location.href
+    }).then(function(item) {
+        // Close modal
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = 'auto';
+    }).catch(function(error) {
+        console.error('Error adding to cart:', error);
+    });
+}
+
+// ADD THIS NEW FUNCTION FOR "BUY NOW"
+function buyNow(itemId, itemName, itemPrice, quantity) {
+    Snipcart.api.cart.items.add({
+        id: itemId,
+        name: itemName,
+        price: parseFloat(itemPrice),
+        quantity: parseInt(quantity) || 1,
+        url: window.location.href
+    }).then(function(item) {
+        // Close modal and open checkout
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = 'auto';
+        Snipcart.api.modal.show();
+    }).catch(function(error) {
+        console.error('Error in buy now:', error);
+    });
+}
         
         function buyNow(itemId, itemName, itemPrice, quantity) {
             Snipcart.api.cart.items.add({
@@ -1296,3 +1317,4 @@
     </script>
 </body>
 </html>
+
