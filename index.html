@@ -37,6 +37,8 @@
 </head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+</head>
     <style>
         /* Reset and Base Styles */
         * {
@@ -1257,27 +1259,27 @@
             }
         }
         
-        // Add to Cart Function
-        function addToCart(itemId, itemName, itemPrice, quantity) {
-            // Using Snipcart API to add item to cart
-            Snipcart.api.cart.items.add({
-                id: itemId,
-                name: itemName,
-                price: itemPrice,
-                quantity: parseInt(quantity),
-                url: window.location.href
-            });
-            
-            // Close the modal after adding to cart
-            const modals = document.querySelectorAll('.modal');
-            modals.forEach(modal => {
-                modal.style.display = 'none';
-            });
-            document.body.style.overflow = 'auto';
-            
-            // Show success message
-            alert('Item added to cart!');
-        }
+       // Add to Cart Function
+function addToCart(itemId, itemName, itemPrice, quantity) {
+    // Using Snipcart API to add item to cart
+    Snipcart.api.cart.items.add({
+        id: itemId,
+        name: itemName,
+        price: parseFloat(itemPrice),
+        quantity: parseInt(quantity),
+        url: window.location.href
+    }).then(function(item) {
+        // Close the modal after adding to cart
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+            modal.style.display = 'none';
+        });
+        document.body.style.overflow = 'auto';
+    }).catch(function(error) {
+        console.error('Error adding item to cart:', error);
+        alert('There was an error adding the item to your cart. Please try again.');
+    });
+}
         
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a').forEach(anchor => {
@@ -1295,3 +1297,4 @@
     </script>
 </body>
 </html>
+
