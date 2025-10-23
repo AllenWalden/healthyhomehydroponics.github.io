@@ -1,53 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Schema.org markup -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Store",
-  "name": "Healthy Home Hydroponics",
-  "description": "Premium home hydroponic systems and indoor gardening supplies",
-  "url": "https://healthyhomehydroponics.com",
-  "keywords": "hydroponic systems, indoor gardening, home hydroponics, healthy gardening"
-}
-</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Healthy Home Hydroponics - Grow Fresh Food Year-Round</title>
-     <!-- SEO Meta Tags -->
-    <meta name="description" content="Shop the best home hydroponic systems & indoor gardening kits. Grow fresh herbs, vegetables & greens year-round. Beginner-friendly hydroponic systems with fast shipping.">
-    <meta name="keywords" content="hydroponic systems, home hydroponic systems, indoor gardening, healthy gardening, hydroponic kits, indoor garden, smart garden, herb garden kit, indoor growing system">
-    <meta name="author" content="Healthy Home Hydroponics">
+    <meta name="description" content="Bring food production back to American homes with our space-efficient hydroponic systems. Grow fresh, healthy food year-round.">
     
-    <!-- Open Graph for Social Media -->
-    <meta property="og:title" content="Healthy Home Hydroponics | Premium Indoor Gardening Systems">
-    <meta property="og:description" content="Grow fresh, healthy food year-round with our home hydroponic systems. Perfect for indoor gardening beginners & experts.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:url" content="https://healthyhomehydroponics.com">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Healthy Home Hydroponics | Indoor Gardening Systems">
-    <meta name="twitter:description" content="Home hydroponic systems for healthy indoor gardening. Grow fresh food year-round.">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://healthyhomehydroponics.com">
-</head>
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Store",
+      "name": "Healthy Home Hydroponics",
+      "description": "Premium home hydroponic systems helping Americans grow their own food",
+      "url": "https://healthyhomehydroponics.com"
+    }
+    </script>
+
+    <!-- Styles & Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
-</head>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
         :root {
             --primary: #2d5a27;
             --secondary: #8bc34a;
@@ -56,749 +31,813 @@
             --dark: #1a3317;
             --text: #333333;
             --gray: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
         body {
             line-height: 1.6;
             color: var(--text);
-            background-color: white;
+            background-color: var(--white);
             overflow-x: hidden;
         }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
-        
-        section {
-            padding: 4rem 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            color: var(--primary);
-            position: relative;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 3px;
-            background: var(--secondary);
-            margin: 15px auto;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: white;
-            padding: 0.8rem 1.6rem;
-            border: none;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Header Styles */
+
+        /* Modern Header */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: var(--transition);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.2rem 0;
         }
-        
+
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        
-        .logo span {
+
+        .logo i {
             color: var(--secondary);
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             align-items: center;
+            gap: 2rem;
         }
-        
-        nav ul li {
-            margin-left: 1.8rem;
-        }
-        
-        nav ul li a {
+
+        nav a {
             color: var(--dark);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: var(--transition);
             position: relative;
         }
-        
-        nav ul li a:after {
+
+        nav a:after {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
             bottom: -5px;
             left: 0;
-            background-color: var(--secondary);
-            transition: width 0.3s;
+            background: var(--secondary);
+            transition: var(--transition);
         }
-        
-        nav ul li a:hover {
+
+        nav a:hover {
             color: var(--primary);
         }
-        
-        nav ul li a:hover:after {
+
+        nav a:hover:after {
             width: 100%;
         }
-        
+
         .cart-icon {
             position: relative;
         }
-        
+
         .snipcart-checkout {
-            cursor: pointer;
             background: none;
             border: none;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--dark);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition);
         }
-        
+
+        .snipcart-checkout:hover {
+            background: var(--light);
+            color: var(--secondary);
+        }
+
         .snipcart-items-count {
             position: absolute;
-            top: -8px;
-            right: -8px;
+            top: -5px;
+            right: -5px;
             background: var(--secondary);
             color: white;
             border-radius: 50%;
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             font-size: 0.7rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
         }
-        
-        /* Hero Section */
+
+        /* Modern Hero Section */
         .hero {
-            background: linear-gradient(rgba(45, 90, 39, 0.8), rgba(45, 90, 39, 0.8)), url('https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(135deg, rgba(45, 90, 39, 0.9) 0%, rgba(139, 195, 74, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             color: white;
+            padding: 12rem 0 6rem;
             text-align: center;
-            padding: 10rem 1rem 6rem;
-            margin-top: 70px;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-        
-        .hero p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            opacity: 0.9;
-        }
-        
-        /* Products Section - UPDATED FOR SMALLER, SHARPER IMAGES */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
+            overflow: hidden;
         }
-        
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
-        
-        .product-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
             background: var(--secondary);
             color: white;
-            padding: 4px 8px;
-            border-radius: 15px;
-            font-size: 0.7rem;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin-bottom: 2rem;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 6rem 0;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 600;
             z-index: 2;
         }
-        
+
         .product-image {
-            height: 160px;
-            overflow: hidden;
+            height: 250px;
             background: var(--light);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
         }
-        
+
         .product-image img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            transition: transform 0.5s;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: crisp-edges;
+            transition: var(--transition);
         }
-        
+
         .product-card:hover .product-image img {
-            transform: scale(1.05);
+            transform: scale(1.1);
         }
-        
+
         .product-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
-        
+
         .product-info h3 {
-            margin-bottom: 0.6rem;
+            font-size: 1.4rem;
             color: var(--primary);
-            font-size: 1.2rem;
-        }
-        
-        .product-info p {
             margin-bottom: 1rem;
-            color: #666;
-            font-size: 0.9rem;
+            font-weight: 600;
         }
-        
+
+        .product-info p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
         .product-price {
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--secondary);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
-        
-        .view-details-btn {
-            width: 100%;
-            background: var(--secondary);
-            color: white;
+
+        .product-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-product {
+            flex: 1;
+            padding: 0.8rem 1.5rem;
             border: none;
-            padding: 10px;
-            border-radius: 4px;
+            border-radius: 10px;
             font-weight: 600;
             cursor: pointer;
-            transition: background 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.85rem;
-        }
-        
-        .view-details-btn:hover {
-            background: var(--accent);
-        }
-        
-       /* Product Modal Styles - UPDATED FOR SMALLER, SHARPER IMAGES */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 2000;
-    overflow-y: auto;
-}
-
-.modal-content {
-    background: white;
-    margin: 1.5rem auto;
-    width: 90%;
-    max-width: 900px;
-    border-radius: 12px;
-    position: relative;
-    animation: modalOpen 0.3s ease;
-}
-
-@keyframes modalOpen {
-    from { opacity: 0; transform: translateY(-50px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    color: var(--text);
-    cursor: pointer;
-    z-index: 10;
-}
-
-.modal-product-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    padding: 1.5rem;
-}
-
-.modal-product-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.main-image {
-    border-radius: 8px;
-    overflow: hidden;
-    height: 280px;
-    background: var(--light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.main-image img {
-    max-width: 90%;
-    max-height: 90%;
-    object-fit: contain;
-    border-radius: 6px;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-}
-
-.thumbnail-gallery {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.thumbnail {
-    width: 60px;
-    height: 60px;
-    border-radius: 6px;
-    overflow: hidden;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
-    background: var(--light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-}
-
-.thumbnail.active {
-    border-color: var(--secondary);
-}
-
-.thumbnail img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-}
-
-.modal-product-info h2 {
-    font-size: 1.8rem;
-    color: var(--primary);
-    margin-bottom: 0.8rem;
-}
-
-.modal-product-price {
-    font-size: 1.8rem;
-    color: var(--secondary);
-    font-weight: bold;
-    margin: 1.2rem 0;
-}
-
-.modal-product-description {
-    margin: 1.5rem 0;
-    line-height: 1.7;
-    font-size: 1rem;
-}
-
-.specs-list {
-    margin: 1.5rem 0;
-}
-
-.specs-list h3 {
-    color: var(--primary);
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
-}
-
-.specs-list ul {
-    list-style: none;
-}
-
-.specs-list li {
-    margin-bottom: 0.6rem;
-    padding-left: 1.5rem;
-    position: relative;
-    font-size: 0.95rem;
-}
-
-.specs-list li:before {
-    content: "✓";
-    color: var(--secondary);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
-}
-
-.modal-add-to-cart {
-    background: var(--light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    margin-top: 1.5rem;
-    text-align: center;
-}
-
-.quantity-selector {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0;
-    gap: 1rem;
-}
-
-.quantity-selector label {
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-.quantity-selector input {
-    width: 70px;
-    padding: 0.7rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 0.95rem;
-}
-
-.modal-snipcart-add-item {
-    background: var(--secondary);
-    color: white;
-    border: none;
-    padding: 0.9rem 1.8rem;
-    border-radius: 4px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-size: 1rem;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.modal-snipcart-add-item:hover {
-    background: var(--accent);
-}
-        
-        /* Benefits Section */
-        .benefits {
-            background-color: var(--light);
-        }
-        
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-        
-        .benefit-item {
+            transition: var(--transition);
             text-align: center;
-            padding: 1.8rem 1.2rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-        
-        .benefit-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .benefit-icon {
-            font-size: 2.5rem;
-            color: var(--secondary);
-            margin-bottom: 1.2rem;
-        }
-        
-        .benefit-item h3 {
-            margin-bottom: 0.8rem;
-            color: var(--primary);
-            font-size: 1.1rem;
-        }
-        
-        .benefit-item p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        /* Contact Section */
-        .contact-content {
+            text-decoration: none;
             display: flex;
-            flex-wrap: wrap;
-            gap: 2.5rem;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
-        
-        .contact-info {
-            flex: 1;
-            min-width: 280px;
+
+        .btn-cart {
+            background: var(--secondary);
+            color: white;
         }
-        
-        .contact-info h3 {
-            margin-bottom: 1.2rem;
-            color: var(--primary);
+
+        .btn-cart:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
         }
-        
-        .contact-info p {
-            margin-bottom: 1.2rem;
-            font-size: 1rem;
+
+        .btn-buy {
+            background: var(--primary);
+            color: white;
         }
-        
-        .contact-form {
-            flex: 1;
-            min-width: 280px;
+
+        .btn-buy:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
             background: var(--light);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
-        
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .contact-form {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
         .form-group {
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: var(--dark);
-            font-size: 0.95rem;
         }
-        
+
         .form-group input,
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 0.95rem;
-            transition: border 0.3s;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
         }
-        
+
         .form-group input:focus,
         .form-group textarea:focus,
         .form-group select:focus {
             border-color: var(--secondary);
             outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.1);
         }
-        
+
         .form-group textarea {
             height: 120px;
             resize: vertical;
         }
-        
+
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background: var(--dark);
             color: white;
-            padding: 2.5rem 0 1.2rem;
+            padding: 4rem 0 2rem;
         }
-        
+
         .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
         }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 180px;
-        }
-        
+
         .footer-section h3 {
-            margin-bottom: 1.2rem;
             color: var(--secondary);
-            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
         }
-        
+
         .footer-section p {
-            font-size: 0.9rem;
-            line-height: 1.5;
             color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
         }
-        
+
         .footer-section ul {
             list-style: none;
         }
-        
+
         .footer-section ul li {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
         }
-        
+
         .footer-section ul li a {
             color: #ccc;
             text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
+            transition: var(--transition);
         }
-        
+
         .footer-section ul li a:hover {
             color: var(--secondary);
         }
-        
+
         .social-links {
             display: flex;
-            gap: 0.8rem;
-            margin-top: 1rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
         }
-        
+
         .social-links a {
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             background: rgba(255,255,255,0.1);
             border-radius: 50%;
             color: white;
-            transition: all 0.3s;
-            font-size: 0.9rem;
+            transition: var(--transition);
         }
-        
+
         .social-links a:hover {
             background: var(--secondary);
             transform: translateY(-2px);
         }
-        
+
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1.2rem;
+            padding-top: 2rem;
             text-align: center;
             color: #999;
-            font-size: 0.8rem;
         }
-        
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 2rem auto;
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 20px;
+            position: relative;
+            animation: modalOpen 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes modalOpen {
+            from { opacity: 0; transform: scale(0.9) translateY(-20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--text);
+            cursor: pointer;
+            z-index: 10;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            background: var(--light);
+        }
+
+        .modal-product-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 2rem;
+        }
+
+        .modal-product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .main-image {
+            border-radius: 15px;
+            overflow: hidden;
+            height: 400px;
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .main-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: var(--transition);
+            background: var(--light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+        }
+
+        .thumbnail.active {
+            border-color: var(--secondary);
+        }
+
+        .thumbnail img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .modal-product-info h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .modal-product-price {
+            font-size: 2rem;
+            color: var(--secondary);
+            font-weight: bold;
+            margin: 1.5rem 0;
+        }
+
+        .modal-product-description {
+            margin: 2rem 0;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .specs-list {
+            margin: 2rem 0;
+        }
+
+        .specs-list h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .specs-list ul {
+            list-style: none;
+        }
+
+        .specs-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 1rem;
+        }
+
+        .specs-list li:before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 1.2rem 2rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .modal-btn-cart {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .modal-btn-cart:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .modal-btn-buy {
+            background: var(--primary);
+            color: white;
+        }
+
+        .modal-btn-buy:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .quantity-selector label {
+            font-weight: 600;
+        }
+
+        .quantity-selector input {
+            width: 80px;
+            padding: 0.8rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            text-align: center;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
-                text-align: center;
+                gap: 1rem;
             }
-            
+
             nav ul {
-                margin-top: 1rem;
+                gap: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
                 justify-content: center;
             }
-            
-            nav ul li {
-                margin: 0 0.6rem;
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
-            
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .modal-product-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 1.5rem;
+            }
+
+            .main-image {
+                height: 300px;
+            }
+
+            .modal-actions {
+                flex-direction: column;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
             .hero {
-                padding: 8rem 1rem 4rem;
+                padding: 8rem 0 4rem;
             }
-            
+
             .hero h1 {
                 font-size: 2rem;
             }
-            
-            section {
-                padding: 3rem 0;
+
+            .section-title {
+                font-size: 2rem;
             }
-            
-            .modal-product-layout {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-                padding: 1rem;
-            }
-            
+
             .modal-content {
                 margin: 1rem auto;
                 width: 95%;
             }
-            
-            .main-image {
-                height: 220px;
-            }
-            
-            .thumbnail {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 1.5rem;
-            }
-            
-            .product-image {
-                height: 140px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .product-image {
-                height: 120px;
-            }
-            
-            .main-image {
-                height: 180px;
-            }
-            
-            .products-grid {
-                grid-template-columns: 1fr;
-                gap: 1.2rem;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
+
+            .product-actions {
+                flex-direction: column;
             }
         }
     </style>
@@ -808,13 +847,14 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">Healthy Home <span>Hydroponics</span></div>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-leaf"></i>
+                    Healthy Home Hydroponics
+                </a>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#benefits">Benefits</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
                         <li class="cart-icon">
                             <button class="snipcart-checkout">
                                 <i class="fas fa-shopping-cart"></i>
@@ -828,66 +868,184 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="container">
-            <h1>Home Hydroponic Systems for Healthy Indoor Gardening</h1>
-            <p>Discover premium indoor gardening with our hydroponic systems. Grow fresh herbs, vegetables, and greens year-round in your home.</p>
-            <a href="#products" class="btn">Shop Now</a>
+            <div class="hero-content">
+                <h1>Bring Food Production Back to American Homes</h1>
+                <p>Rediscover the joy of growing your own fresh, healthy food year-round with our space-efficient hydroponic systems. No backyard required.</p>
+                <div class="btn-group">
+                    <a href="#products" class="btn btn-primary">
+                        <i class="fas fa-seedling"></i>
+                        Shop Systems
+                    </a>
+                    <a href="about.html" class="btn btn-secondary">
+                        <i class="fas fa-heart"></i>
+                        Our Mission
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="mission-text">
+                    At Healthy Home Hydroponics, we believe every American household should have the power to grow their own fresh, nutritious food. 
+                    In a world where food miles are growing and connection to our food sources is diminishing, we're bringing food production back 
+                    to where it belongs - right in your home.
+                </p>
+                <p class="mission-text">
+                    Our hydroponic systems are designed for modern living - compact, efficient, and beautiful enough for any kitchen or living space. 
+                    Whether you're in a downtown apartment or suburban home, we make it possible to harvest fresh greens, herbs, and vegetables 
+                    365 days a year.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products">
+    <section class="products" id="products">
         <div class="container">
-            <h2 class="section-title">Our Products</h2>
+            <h2 class="section-title">Featured Systems</h2>
             <div class="products-grid">
-                <!-- Product 1 - 12-Pod Smart Garden -->
+                <!-- Product 1 -->
                 <div class="product-card">
-                    <div class="product-badge">Bestseller</div>
+                    <div class="product-badge">Most Popular</div>
                     <div class="product-image">
-                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2841c6092be84cd88ab07e66dd2cce61g.jpg_220x220q75.jpg_.avif" alt="12-Pod Smart Hydroponic Garden">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S2841c6092be84cd88ab07e66dd2cce61g.jpg_220x220q75.jpg_.avif" alt="12-Pod Smart Garden System">
                     </div>
                     <div class="product-info">
                         <h3>12-Pod Smart Garden System</h3>
-                        <p>Advanced indoor hydroponic system with full-spectrum LED lights and smart controls.</p>
+                        <p>Advanced indoor hydroponic system with full-spectrum LED lights and smart controls for abundant harvests.</p>
                         <div class="product-price">$80.00</div>
-                        <button class="view-details-btn" onclick="openModal('smart-garden')">View Details</button>
+                        <div class="product-actions">
+                            <button class="btn-product btn-cart" onclick="openModal('smart-garden')">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Product 2 - 6-Pod Herb Garden -->
+
+                <!-- Product 2 -->
                 <div class="product-card">
-                    <div class="product-badge">Popular</div>
+                    <div class="product-badge">Compact Design</div>
                     <div class="product-image">
                         <img src="https://ae-pic-a1.aliexpress-media.com/kf/S49b6a5f200544e28bf56ff234a6d4914Z.jpg_220x220q75.jpg_.avif" alt="6-Pod Indoor Herb Garden">
                     </div>
                     <div class="product-info">
                         <h3>6-Pod Indoor Herb Garden</h3>
-                        <p>Compact hydroponic system perfect for growing fresh herbs in your kitchen.</p>
+                        <p>Perfect for kitchen countertops. Grow fresh culinary herbs year-round with this compact hydroponic system.</p>
                         <div class="product-price">$65.00</div>
-                        <button class="view-details-btn" onclick="openModal('herb-garden')">View Details</button>
-                    </div>
-                </div>
-                
-                <!-- Product 3 - Plant Food -->
-                <div class="product-card">
-                    <div class="product-badge">Essential</div>
-                    <div class="product-image">
-                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S408d2d0c48154e6f9a6e9b9167a004435.jpg_220x220q75.jpg_.avif" alt="Liquid Plant Food Nutrients">
-                    </div>
-                    <div class="product-info">
-                        <h3>Liquid Plant Food Nutrients</h3>
-                        <p>Complete nutrient solution for optimal growth in all hydroponic systems.</p>
-                        <div class="product-price">$16.00</div>
-                        <button class="view-details-btn" onclick="openModal('plant-food')">View Details</button>
+                        <div class="product-actions">
+                            <button class="btn-product btn-cart" onclick="openModal('herb-garden')">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Detail Modals -->
-    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>We're Here to Help</h3>
+                    <p>Have questions about getting started with hydroponics? Need help choosing the right system for your space? Our team is here to help you every step of the way.</p>
+                    <p><strong>Hours:</strong> Monday-Friday 9am-6pm EST</p>
+                    <p>We typically respond within 24 hours during business days.</p>
+                </div>
+                <div class="contact-form">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <input type="hidden" name="form-name" value="contact">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a subject</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="product">Product Question</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Healthy Home Hydroponics</h3>
+                    <p>Empowering American households to grow fresh, healthy food year-round with space-efficient hydroponic systems designed for modern living.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Growing Guides</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@healthyhomehydroponics.com</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-GROW</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Made in USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Healthy Home Hydroponics. Empowering households to grow their own food.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modals -->
     <!-- Smart Garden Modal -->
     <div id="modal-smart-garden" class="modal">
         <div class="modal-content">
@@ -914,7 +1072,7 @@
                     <div class="modal-product-price">$80.00</div>
                     
                     <div class="modal-product-description">
-                        <p>Grow fresh vegetables, herbs, and flowers year-round with our advanced 12-pod smart garden system. Featuring full-spectrum LED lighting and intelligent controls, this hydroponic system makes indoor gardening effortless and productive.</p>
+                        <p>Grow fresh vegetables, herbs, and flowers year-round with our advanced 12-pod smart garden system. Featuring full-spectrum LED lighting and intelligent controls, this hydroponic system makes indoor gardening effortless and productive for any household.</p>
                     </div>
                     
                     <div class="specs-list">
@@ -931,7 +1089,7 @@
                     </div>
                     
                     <div class="specs-list">
-                        <h3>What You Can Grow:</h3>
+                        <h3>Perfect For Growing:</h3>
                         <ul>
                             <li>Fresh herbs: Basil, Mint, Cilantro, Parsley</li>
                             <li>Leafy greens: Lettuce, Spinach, Kale</li>
@@ -940,21 +1098,20 @@
                             <li>Microgreens and sprouts</li>
                         </ul>
                     </div>
+
+                    <div class="quantity-selector">
+                        <label for="quantity-garden">Quantity:</label>
+                        <input type="number" id="quantity-garden" value="1" min="1">
+                    </div>
                     
-                    <div class="modal-add-to-cart">
-                        <div class="quantity-selector">
-                            <label for="quantity-garden">Quantity:</label>
-                            <input type="number" id="quantity-garden" value="1" min="1">
-                        </div>
-                        <button class="modal-snipcart-add-item"
-                            data-item-id="smart-garden-001"
-                            data-item-name="12-Pod Smart Garden System"
-                            data-item-price="80.00"
-                            data-item-url="https://healthyhomehydroponics.com"
-                            data-item-image="https://ae-pic-a1.aliexpress-media.com/kf/S2841c6092be84cd88ab07e66dd2cce61g.jpg_220x220q75.jpg_.avif"
-                            data-item-description="Advanced 12-pod hydroponic system with LED lights and smart controls"
-                            onclick="addToCart('smart-garden-001', '12-Pod Smart Garden System', 80.00, document.getElementById('quantity-garden').value)">
-                            Add to Cart - $80.00
+                    <div class="modal-actions">
+                        <button class="modal-btn modal-btn-cart" onclick="addToCart('smart-garden-001', '12-Pod Smart Garden System', 80.00, document.getElementById('quantity-garden').value)">
+                            <i class="fas fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                        <button class="modal-btn modal-btn-buy" onclick="buyNow('smart-garden-001', '12-Pod Smart Garden System', 80.00, document.getElementById('quantity-garden').value)">
+                            <i class="fas fa-bolt"></i>
+                            Buy Now
                         </button>
                     </div>
                 </div>
@@ -988,7 +1145,7 @@
                     <div class="modal-product-price">$65.00</div>
                     
                     <div class="modal-product-description">
-                        <p>Perfect for kitchen countertops, this compact 6-pod hydroponic garden lets you grow fresh herbs year-round. Enjoy the convenience of having basil, mint, cilantro, and other culinary herbs right at your fingertips.</p>
+                        <p>Perfect for kitchen countertops, this compact 6-pod hydroponic garden lets you grow fresh herbs year-round. Enjoy the convenience of having basil, mint, cilantro, and other culinary herbs right at your fingertips whenever you cook.</p>
                     </div>
                     
                     <div class="specs-list">
@@ -1000,7 +1157,7 @@
                             <li>Automatic watering system</li>
                             <li>Quiet operation</li>
                             <li>Easy-to-clean components</li>
-                            <li>Perfect for beginners</li>
+                            <li>Perfect for beginners and small spaces</li>
                         </ul>
                     </div>
                     
@@ -1015,21 +1172,20 @@
                             <li>Oregano - Mediterranean dishes</li>
                         </ul>
                     </div>
+
+                    <div class="quantity-selector">
+                        <label for="quantity-herb">Quantity:</label>
+                        <input type="number" id="quantity-herb" value="1" min="1">
+                    </div>
                     
-                    <div class="modal-add-to-cart">
-                        <div class="quantity-selector">
-                            <label for="quantity-herb">Quantity:</label>
-                            <input type="number" id="quantity-herb" value="1" min="1">
-                        </div>
-                        <button class="modal-snipcart-add-item"
-                            data-item-id="herb-garden-002"
-                            data-item-name="6-Pod Indoor Herb Garden"
-                            data-item-price="65.00"
-                            data-item-url="https://healthyhomehydroponics.com"
-                            data-item-image="https://ae-pic-a1.aliexpress-media.com/kf/S49b6a5f200544e28bf56ff234a6d4914Z.jpg_220x220q75.jpg_.avif"
-                            data-item-description="Compact 6-pod hydroponic system perfect for growing fresh herbs"
-                            onclick="addToCart('herb-garden-002', '6-Pod Indoor Herb Garden', 65.00, document.getElementById('quantity-herb').value)">
-                            Add to Cart - $65.00
+                    <div class="modal-actions">
+                        <button class="modal-btn modal-btn-cart" onclick="addToCart('herb-garden-002', '6-Pod Indoor Herb Garden', 65.00, document.getElementById('quantity-herb').value)">
+                            <i class="fas fa-cart-plus"></i>
+                            Add to Cart
+                        </button>
+                        <button class="modal-btn modal-btn-buy" onclick="buyNow('herb-garden-002', '6-Pod Indoor Herb Garden', 65.00, document.getElementById('quantity-herb').value)">
+                            <i class="fas fa-bolt"></i>
+                            Buy Now
                         </button>
                     </div>
                 </div>
@@ -1037,193 +1193,7 @@
         </div>
     </div>
 
-    <!-- Plant Food Modal -->
-    <div id="modal-plant-food" class="modal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('plant-food')">&times;</button>
-            <div class="modal-product-layout">
-                <div class="modal-product-gallery">
-                    <div class="main-image">
-                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S408d2d0c48154e6f9a6e9b9167a004435.jpg_220x220q75.jpg_.avif" alt="Liquid Plant Food Nutrients" id="main-image-food">
-                    </div>
-                    <div class="thumbnail-gallery">
-                        <div class="thumbnail active" onclick="changeImage('food', 'https://ae-pic-a1.aliexpress-media.com/kf/S408d2d0c48154e6f9a6e9b9167a004435.jpg_220x220q75.jpg_.avif')">
-                            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S408d2d0c48154e6f9a6e9b9167a004435.jpg_220x220q75.jpg_.avif" alt="Bottle front">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage('food', 'https://ae-pic-a1.aliexpress-media.com/kf/Sa0eb328ee4dc4346aecd5728cc4a4b17A.jpg_220x220q75.jpg_.avif')">
-                            <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sa0eb328ee4dc4346aecd5728cc4a4b17A.jpg_220x220q75.jpg_.avif" alt="Bottle side">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage('food', 'https://ae-pic-a1.aliexpress-media.com/kf/S80d1bd8d31f9466f904f6166bb3aed5fI.jpg_220x220q75.jpg_.avif')">
-                            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S80d1bd8d31f9466f904f6166bb3aed5fI.jpg_220x220q75.jpg_.avif" alt="Usage example">
-                        </div>
-                        <div class="thumbnail" onclick="changeImage('food', 'https://ae-pic-a1.aliexpress-media.com/kf/S47b7d21c9127445494b3dae8ef8aab418.jpg_220x220q75.jpg_.avif')">
-                            <img src="https://ae-pic-a1.aliexpress-media.com/kf/S47b7d21c9127445494b3dae8ef8aab418.jpg_220x220q75.jpg_.avif" alt="Packaging">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-product-info">
-                    <h2>Liquid Plant Food Nutrients</h2>
-                    <div class="modal-product-price">$16.00</div>
-                    
-                    <div class="modal-product-description">
-                        <p>Maximize your plant growth with our specially formulated liquid plant food. This complete nutrient solution provides all essential macro and micronutrients for healthy, vigorous growth in hydroponic systems.</p>
-                    </div>
-                    
-                    <div class="specs-list">
-                        <h3>Product Benefits:</h3>
-                        <ul>
-                            <li>Complete balanced formula for all growth stages</li>
-                            <li>Promotes strong root development</li>
-                            <li>Enhances flowering and fruit production</li>
-                            <li>Improves plant vitality and resistance</li>
-                            <li>Easy-to-use liquid concentrate</li>
-                            <li>Works with all hydroponic systems</li>
-                            <li>Safe for edible plants and herbs</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="specs-list">
-                        <h3>Usage Instructions:</h3>
-                        <ul>
-                            <li>Mix 5ml per gallon of water</li>
-                            <li>Use every 2 weeks for maintenance</li>
-                            <li>Increase to weekly during active growth</li>
-                            <li>Suitable for vegetables, herbs, and flowers</li>
-                            <li>One bottle treats up to 20 gallons</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="modal-add-to-cart">
-                        <div class="quantity-selector">
-                            <label for="quantity-food">Quantity:</label>
-                            <input type="number" id="quantity-food" value="1" min="1">
-                        </div>
-                        <button class="modal-snipcart-add-item"
-                            data-item-id="plant-food-003"
-                            data-item-name="Liquid Plant Food Nutrients"
-                            data-item-price="16.00"
-                            data-item-url="https://healthyhomehydroponics.com"
-                            data-item-image="https://ae-pic-a1.aliexpress-media.com/kf/S408d2d0c48154e6f9a6e9b9167a004435.jpg_220x220q75.jpg_.avif"
-                            data-item-description="Complete liquid nutrient solution for hydroponic systems"
-                            onclick="addToCart('plant-food-003', 'Liquid Plant Food Nutrients', 16.00, document.getElementById('quantity-food').value)">
-                            Add to Cart - $16.00
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Benefits Section -->
-    <section class="benefits" id="benefits">
-        <div class="container">
-            <h2 class="section-title">Why Choose Hydroponics?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌱</div>
-                    <h3>Faster Growth</h3>
-                    <p>Plants grow up to 50% faster in hydroponic systems compared to soil.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">💧</div>
-                    <h3>Water Efficient</h3>
-                    <p>Uses up to 90% less water than traditional gardening methods.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🏙️</div>
-                    <h3>Space Saving</h3>
-                    <p>Grow more food in less space, perfect for urban environments.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon">🌞</div>
-                    <h3>Year-Round Growing</h3>
-                    <p>Not limited by seasons - grow fresh produce all year long.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-   <!-- Contact Section -->
-<section id="contact">
-    <div class="container">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>Have questions about our products or need help with your setup? We're here to help! Fill out the form and we'll get back to you as soon as possible.</p>
-                <p><strong>Hours:</strong> Monday-Friday 9am-6pm EST</p>
-                <p>We typically respond within 24 hours during business days.</p>
-            </div>
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form id="contactForm" action="https://formspree.io/f/xgvngwqg" method="POST">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission">
-                    <input type="hidden" name="_format" value="plain">
-                    
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">Select a subject</option>
-                            <option value="general">General Inquiry</option>
-                            <option value="product">Product Question</option>
-                            <option value="support">Technical Support</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Healthy Home Hydroponics</h3>
-                    <p>Your trusted source for home hydroponic systems and supplies. Grow fresh, healthy food year-round.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#benefits">Benefits</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <p>Follow us on social media for tips and updates:</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Healthy Home Hydroponics. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Snipcart Script -->
+    <!-- Snipcart Configuration -->
     <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
     <div hidden id="snipcart" data-api-key="YWY5Y2UyYzktM2Y2OS00N2I5LWIwY2YtY2U4YzUxY2Y4N2U0NjM3ODMyNzI3NDA1NDEzNTc0ODU0" data-config-modal-style="side"></div>
 
@@ -1239,12 +1209,12 @@
             document.body.style.overflow = 'auto';
         }
         
-        // Image Gallery Function
+        // Image Gallery
         function changeImage(productType, imageUrl) {
             document.getElementById('main-image-' + productType).src = imageUrl;
             
             // Update active thumbnail
-            const thumbnails = document.querySelectorAll('#modal-' + productType.replace('smart', 'smart-garden').replace('herb', 'herb-garden').replace('food', 'plant-food') + ' .thumbnail');
+            const thumbnails = document.querySelectorAll('#modal-' + (productType === 'smart' ? 'smart-garden' : productType === 'herb' ? 'herb-garden' : 'plant-food') + ' .thumbnail');
             thumbnails.forEach(thumb => {
                 thumb.classList.remove('active');
             });
@@ -1259,42 +1229,70 @@
             }
         }
         
-       // Add to Cart Function
-function addToCart(itemId, itemName, itemPrice, quantity) {
-    // Using Snipcart API to add item to cart
-    Snipcart.api.cart.items.add({
-        id: itemId,
-        name: itemName,
-        price: parseFloat(itemPrice),
-        quantity: parseInt(quantity),
-        url: window.location.href
-    }).then(function(item) {
-        // Close the modal after adding to cart
-        const modals = document.querySelectorAll('.modal');
-        modals.forEach(modal => {
-            modal.style.display = 'none';
-        });
-        document.body.style.overflow = 'auto';
-    }).catch(function(error) {
-        console.error('Error adding item to cart:', error);
-        alert('There was an error adding the item to your cart. Please try again.');
-    });
-}
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+        // Cart Functions
+        function addToCart(itemId, itemName, itemPrice, quantity) {
+            Snipcart.api.cart.items.add({
+                id: itemId,
+                name: itemName,
+                price: parseFloat(itemPrice),
+                quantity: parseInt(quantity) || 1,
+                url: window.location.href
+            }).then(function(item) {
+                closeModal('smart-garden');
+                closeModal('herb-garden');
                 
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
+                // Optional: Show subtle notification
+                console.log('Added to cart:', item);
+            }).catch(function(error) {
+                console.error('Error adding to cart:', error);
+                alert('There was an error adding the item to your cart. Please try again.');
             });
+        }
+        
+        function buyNow(itemId, itemName, itemPrice, quantity) {
+            Snipcart.api.cart.items.add({
+                id: itemId,
+                name: itemName,
+                price: parseFloat(itemPrice),
+                quantity: parseInt(quantity) || 1,
+                url: window.location.href
+            }).then(function(item) {
+                closeModal('smart-garden');
+                closeModal('herb-garden');
+                
+                // Open checkout directly
+                Snipcart.api.modal.show();
+            }).catch(function(error) {
+                console.error('Error in buy now:', error);
+                alert('There was an error processing your order. Please try again.');
+            });
+        }
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
         });
     </script>
 </body>
 </html>
-
