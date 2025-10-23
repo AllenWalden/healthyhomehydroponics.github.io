@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://healthyhomehydroponics.com/sitemap.xml
