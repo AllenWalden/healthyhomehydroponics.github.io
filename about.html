@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Healthy Home Hydroponics</title>
+    <meta name="description" content="Learn about our mission to bring food production back to American homes with space-efficient hydroponic systems for everyone.">
+    
+    <!-- Styles & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2d5a27;
+            --secondary: #8bc34a;
+            --accent: #689f38;
+            --light: #f8fdf6;
+            --dark: #1a3317;
+            --text: #333333;
+            --gray: #f5f5f5;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover:after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .snipcart-checkout {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .snipcart-checkout:hover {
+            background: var(--light);
+            color: var(--secondary);
+        }
+
+        .snipcart-items-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* About Hero */
+        .about-hero {
+            background: linear-gradient(135deg, rgba(45, 90, 39, 0.9) 0%, rgba(139, 195, 74, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1589923188651-268a9765e432?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 10rem 0 4rem;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        /* Mission Section */
+        .mission-story {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 3rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .story-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .story-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+
+        .story-text.highlight {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin: 3rem 0;
+        }
+
+        /* Values Section */
+        .values {
+            padding: 6rem 0;
+            background: var(--light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Space Focus Section */
+        .space-focus {
+            padding: 6rem 0;
+        }
+
+        .focus-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .focus-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .focus-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .focus-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .focus-text h3 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .focus-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .feature-list li {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 195, 74, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+            }
+
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+
+            .focus-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-hero {
+                padding: 8rem 0 3rem;
+            }
+
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-leaf"></i>
+                    Healthy Home Hydroponics
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li class="cart-icon">
+                            <button class="snipcart-checkout">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="snipcart-items-count">0</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Growing Food Should Be For Everyone</h1>
+            <p>We're on a mission to make fresh, homegrown food accessible to every household, regardless of space or experience.</p>
+        </div>
+    </section>
+
+    <!-- Mission Story -->
+    <section class="mission-story">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-content">
+                <p class="story-text">
+                    In a world where the distance between farm and table grows wider each year, we founded Healthy Home Hydroponics with a simple belief: 
+                    every family should have the power to grow their own fresh, nutritious food. We watched as our communities became disconnected from 
+                    their food sources, relying on produce that traveled thousands of miles, losing nutrients and flavor along the way.
+                </p>
+                
+                <p class="story-text">
+                    We asked ourselves: What if we could bring the farm into every home? What if growing food wasn't limited to those with large backyards 
+                    or perfect climates? What if anyone, anywhere could experience the joy of harvesting their own greens, herbs, and vegetables?
+                </p>
+
+                <p class="story-text highlight">
+                    Our answer was clear: Hydroponics. But not the complex, industrial systems you might imagine. We set out to create beautiful, 
+                    space-efficient hydroponic systems designed specifically for modern households - systems that would fit seamlessly into any 
+                    living space while delivering abundant, fresh produce year-round.
+                </p>
+
+                <p class="story-text">
+                    Today, we're proud to help thousands of households across America rediscover the simple pleasure of growing their own food. 
+                    From apartment dwellers in New York City to suburban families in California, we're proving that you don't need a farm to be a farmer. 
+                    You just need the right tools, a little space, and the desire to take control of what you eat.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <h2 class="section-title">Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🏠</div>
+                    <h3>Accessibility</h3>
+                    <p>We believe everyone should have access to fresh, homegrown food regardless of living situation or gardening experience.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🌱</div>
+                    <h3>Sustainability</h3>
+                    <p>Our systems use 90% less water than traditional gardening and eliminate the need for pesticides and herbicides.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">🤝</div>
+                    <h3>Community</h3>
+                    <p>We're building a movement of home growers who share knowledge, recipes, and the joy of growing their own food.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Space Focus Section -->
+    <section class="space-focus">
+        <div class="container">
+            <div class="focus-content">
+                <div class="focus-image">
+                    <img src="https://images.unsplash.com/photo-1589923188651-268a9765e432?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Compact hydroponic system in modern kitchen">
+                </div>
+                <div class="focus-text">
+                    <h3>Designed for Real Homes, Real Lives</h3>
+                    <p>We understand that modern living often means limited space. That's why every system we offer is designed with space efficiency as a core principle.</p>
+                    <p>Our hydroponic systems are:</p>
+                    <ul class="feature-list">
+                        <li>Compact enough for apartment countertops</li>
+                        <li>Quiet enough for bedroom or office use</li>
+                        <li>Beautiful enough to display proudly in your home</li>
+                        <li>Simple enough for complete beginners</li>
+                        <li>Efficient enough to grow food year-round</li>
+                    </ul>
+                    <p>Whether you have a sprawling kitchen or a studio apartment, we have a system that will fit your space and your lifestyle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Join the Home Growing Revolution</h2>
+                <p>Start your journey to food independence today. Experience the satisfaction of growing your own fresh, flavorful produce right in your home.</p>
+                <div>
+                    <a href="index.html#products" class="btn btn-primary">
+                        <i class="fas fa-seedling"></i>
+                        Shop Systems
+                    </a>
+                    <a href="index.html#contact" class="btn btn-secondary">
+                        <i class="fas fa-question-circle"></i>
+                        Get Help Choosing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Healthy Home Hydroponics</h3>
+                    <p>Empowering American households to grow fresh, healthy food year-round with space-efficient hydroponic systems designed for modern living.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Growing Guides</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> hello@healthyhomehydroponics.com</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-GROW</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Made in USA</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Healthy Home Hydroponics. Empowering households to grow their own food.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Snipcart -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.js"></script>
+    <div hidden id="snipcart" data-api-key="YWY5Y2UyYzktM2Y2OS00N2I5LWIwY2YtY2U4YzUxY2Y4N2U0NjM3ODMyNzI3NDA1NDEzNTc0ODU0" data-config-modal-style="side"></div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 30px rgba(0,0,0,0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.08)';
+            }
+        });
+    </script>
+</body>
+</html>
